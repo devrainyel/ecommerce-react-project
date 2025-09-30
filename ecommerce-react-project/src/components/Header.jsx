@@ -23,7 +23,7 @@ export function Header() {
                 </div>
 
                 <div class="right-section">
-                    <Link class="orders-link header-link" to="/orders">
+                    <Link class="orders-link header-link" to="orders">
 
                     <span class="orders-text">Orders</span>
                     </Link>
