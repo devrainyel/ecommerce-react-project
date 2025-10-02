@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Header } from '../../components/Header';
 import { OrdersGrid } from './OrdersGrid';
 import './OrdersPage.css';
+import { OrderDetailsGrid } from './OrderDetailsGrid';
 
 export function OrdersPage( { cart }) {
     const [orders, setOrders] = useState([]);
