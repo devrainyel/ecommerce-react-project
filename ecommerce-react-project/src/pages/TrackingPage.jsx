@@ -37,7 +37,9 @@ export function TrackingPage( {cart} ) {
     if(deliveryPercent > 100) {
         deliveryPercent = 100;
     }
-    console.log('Delivery percent:', deliveryPercent);
+
+
+
     return (
         <>
 
@@ -53,7 +55,8 @@ export function TrackingPage( {cart} ) {
                     </Link>
 
                     <div className="delivery-date">
-                    Arriving on {dayjs(orderProduct.estimatedDeliveryTimeMs).format('dddd, MMMM D')}
+                    {deliveryPercent >= 100 ? 'Delivered on' : 'Arriving on'} 
+                    {dayjs(orderProduct.estimatedDeliveryTimeMs).format('dddd, MMMM D')}
                     </div>
 
                     <div className="product-info">
@@ -65,6 +68,8 @@ export function TrackingPage( {cart} ) {
                     </div>
 
                     <img className="product-image" src={orderProduct.product.image} />
+
+                    
 
                     <div className="progress-labels-container">
                     <div className="progress-label">
