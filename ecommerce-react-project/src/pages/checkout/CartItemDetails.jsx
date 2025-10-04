@@ -1,5 +1,6 @@
 import { formatMoney } from '../../utils/money';
 import axios from 'axios';
+import './CartItemDetails.css';
 
 export function CartItemDetails( { cartItem, loadCart } ) {
   const deleteCartItem = async () => {
@@ -18,7 +19,8 @@ export function CartItemDetails( { cartItem, loadCart } ) {
         </div>
         <div className="product-quantity">
             <span>
-            Quantity: <span className="quantity-label">{cartItem.quantity}</span>
+            Quantity: <input type="text" className="quantity-input" /> 
+            <span className="quantity-label">{cartItem.quantity}</span>
             </span>
             <span className="update-quantity-link link-primary">Update</span>
             <span 
