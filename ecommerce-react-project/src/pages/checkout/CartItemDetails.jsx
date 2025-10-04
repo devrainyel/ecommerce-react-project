@@ -24,6 +24,15 @@ export function CartItemDetails({ cartItem, loadCart }) {
     }
   };
 
+  function quantityInputKeyDown(event) {
+    if(event.key ==='Enter'){
+      updateQuantity();
+    } else if(event.key ==='Escape') {
+      setQuantity(cartItem.quantity);
+      setIsQuantityUpdating(false);
+    }
+  }
+
   return (
     <>
       <img className='product-image' src={cartItem.product.image} />
@@ -37,11 +46,11 @@ export function CartItemDetails({ cartItem, loadCart }) {
           <span>
             Quantity:
             {isQuantityUpdating ? (
-              <input type='text' className='quantity-input' value={quantity} onChange={(event) => {
-              const inputValue =  event.target.value;
-              setQuantity(inputValue);
-              console.log(inputValue);
-              }} />
+              <input type='text'      className='quantity-input' vuale={quantity} onChange={(event) => {
+                const inputValue =  event.target.value;
+                setQuantity(inputValue);
+              }} onKeyDown={quantityInputKeyDown}
+              />
             ) : (
               <span className='quantity-label'>{cartItem.quantity}</span>
             )}
